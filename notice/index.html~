@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" data-ng-app="App">
+    <head>
+        <meta charset="UTF-8">
+        <title>SCRIET NOTICE</title>
+        
+        <!--Ionic Libs-->
+      <link rel="stylesheet" href="lib/ionic/css/ionic.css">
+      <script src="lib/ionic/js/ionic.bundle.js"></script>
+        
+       <!-- <script src="cordova.js"></script> -->
+       
+       <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+        
+        <!--My app-->
+        <link rel="stylesheet" href="style.css">
+        <script src="app.js"></script>
+        
+    </head>
+    <body data-ng-controller="AppCtrl">
+      <!--  <ion-header-bar class="bar-calm">
+            <h1 class="title">SCRIET NOTICE BOARD</h1> 
+           
+        </ion-header-bar>  -->
+        <ion-content>
+            <ion-refresher on-refresh="refresh()"></ion-refresher>
+            <div data-ng-show="!posts.length">
+                <br><br>
+                <center>
+                    <h1>Pull down to Refresh</h1>
+                </center>
+                <center><h4>NOTICE BOARD</h4></center>
+            </div>
+            <div class="card list" data-ng-repeat="p in posts">
+                <div class="item item-avatar-left">
+                   <!-- <img data-ng-src="{{ p.author.avatar_URL }}" alt="">-->
+                     <img src="icon.png">
+                    <h3>{{ p.author.name }}</h3>
+                   <p><small>{{ p.date }}</small></p>
+                </div>
+                <div class="item item-body">
+                    <h1>{{ p.title }}</h1>
+                    <div data-ng-bind-html="p.content"></div>
+                         
+                  <!--  <button class="button button-outline button-positive  button-small">
+                      {{ p.comment_count +'comments' }}
+                   </button> 
+                   <button class="button button-outline button-positive  button-small">
+                     {{ p.like_count +'likes' }}
+                   </button>  -->             
+                     
+                </div>
+            </div>
+        </ion-content>
+        <script>
+        	
+        </script>
+    </body>
+</html>
